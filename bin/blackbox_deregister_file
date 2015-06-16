@@ -7,8 +7,7 @@
 # encrypted file will also be removed from the filesystem.
 
 set -e
-blackbox_home=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source "${blackbox_home}/_blackbox_common.sh"
+source "${0%/*}/_blackbox_common.sh"
 
 unencrypted_file=$(get_unencrypted_filename "$1")
 encrypted_file=$(get_encrypted_filename "$1")
